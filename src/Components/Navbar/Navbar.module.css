@@ -1,0 +1,10 @@
+.NavContent{
+    height:10vh;
+    width:100vw;
+    border:1px solid black;
+}
+.heading{
+padding:15px;
+color:black;
+font-size:1.7rem;
+}
