@@ -6,3 +6,151 @@
     align-items:center;
     flex-direction:column;
 }
+.upperlist{
+    display:flex;
+    justify-content:space-around;
+    width:1000px;
+    margin:20px;
+    padding:10px;
+}
+.upperContent{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.heading{
+    font-size:1.7rem;
+    font-weight:600;
+    color:#000;
+    letter-spacing:2px;
+}
+.timing{
+    font-size:1.2rem;
+    
+}
+.containerupperlist{
+    display:flex;
+    flex-direction:row;
+    background-color:#fff;
+    width:700px;
+    justify-content:center;
+    margin-left:110px !important;
+}
+.dailycontent{
+    display:flex;
+    flex-direction:column;
+    margin:10px;
+    padding:10px;
+    justify-content:center;
+}
+.days{
+  font-size:1.3rem;
+  padding:5px;
+}
+.months{
+    text-align:center;
+    font-size:0.9rem;
+    padding:5px;
+}
+
+.icons{
+    text-align:center;
+    padding:5px;
+}
+.deletediv{
+  display:flex;
+   align-items:center;
+   padding:15px;
+   margin:10px;
+}
+.containermonthly{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    background-color:#fff;
+    width:700px;
+    height:100px;
+    margin-left:110px !important;
+}
+.datemonthly{
+    display:flex;
+    align-items:center;
+    margin-left:60px;
+}
+.monthspan{
+ text-align:center;
+ font-size:1.5rem;
+ color:grey;
+}
+.discrptionmonthly{
+  margin-top:20px;
+}
+.discrptionmonthly span{
+    font-size:1.2rem;
+}
+.iconsformonthly{
+    display:flex;
+    align-items:center;
+    margin:15px;
+    margin-right:40px;
+    padding:20px;
+}
+.iconedit{
+    padding:10px;
+}
+.lowerbtns{
+    display:flex;
+    width:1500px;
+    justify-content:space-around;
+}
+.lowerbtns button{
+    padding:10px;
+    font-size:1rem;
+    box-shadow:0px 6px 5px 0px black;
+}
+
+.overlay{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-70%,-80%);
+    background:rgba(0, 0, 0, 0.3);
+    padding:14px 28px;
+    border-radius:6px;
+    max-width:auto;
+    min-width:300px;
+    box-sizing:border-box;
+}
+.inputs{
+    display:flex;
+    flex-direction:column;
+}
+.inputfield{
+   border:none;
+   outline:none;
+   padding:8px;
+   margin:10px;
+   width:500px;
+    font-size:1rem;
+   background-color:rgb(225, 219, 219);
+   color:grey;
+}
+.inputfield:hover{
+    background-color:#fff;
+    transition:0.5s;
+}
+.btnsdiv{
+    display:flex;
+    flex-direction:column; 
+    justify-content: center;
+    align-items:center;
+}
+.btnsdiv button{
+    width:300px;
+    border:none;
+    padding:9px;
+    margin:9px;
+    font-size:1.2rem;
+    background-color:#111;
+    color:#fff;
+}

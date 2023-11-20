@@ -7,6 +7,7 @@ const Main = () => {
   setModal(!Modal);
   console.log(Modal);
  }
+
   return (
    <>
   <div className={style.containermain}  onClick={handleModal}>
