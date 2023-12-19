@@ -1,6 +1,7 @@
 import React from 'react'
 import style from '../Main/Main.module.css';
 import { useState } from 'react';
+import Form from '../Form/Form';
 const Main = () => {
  const [Modal,setModal] = useState(false);
  const handleModal = ()=>{
@@ -22,18 +23,7 @@ what do you want to start doing every day? :)</p>
    </div>
   </div>
  { Modal &&
-     <div className={style.Modalform}>
-        <div className={style.overlay} >
-          <div className={style.inputs}>
-          <input className={style.inputfield} type ="text" placeholder='Enter Habit title'/>
-          <input className={style.inputfield} type ="text" placeholder='Description'/>
-          </div>
-        <div className={style.btnsdiv}>
-         <button className={style.cancelmodal} onClick={handleModal}>Cancel</button>
-         <button className={style.savemodal}>Save</button>
-         </div>
-        </div>
-     </div>
+   <Form handleModal={handleModal}/>
    }
    </>
   )

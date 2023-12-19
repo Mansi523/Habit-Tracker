@@ -9,15 +9,22 @@ function App() {
    setModal(!Modal);
    console.log(Modal);
   }
+  const arr = [1,2,3,4,5];
+
   return (
     <>
 <Navbar/>
 
-<Main/>
-    {/* <List handleModal={handleModal}
-    Modal={Modal}
-    setModal={setModal}
-    /> */}
+
+{
+   arr.length>0?
+   <List handleModal={handleModal}
+   Modal={Modal}
+   setModal={setModal}
+   />:<Main/>
+
+}
+  
     </>
   );
 }

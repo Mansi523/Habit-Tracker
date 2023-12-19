@@ -1,5 +1,5 @@
 .containerlist{
-    height:100vh;
+    height:100%;
     background-image:url("https://images.pexels.com/photos/3826683/pexels-photo-3826683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  
     background-size:cover;
     display:flex;
@@ -9,9 +9,10 @@
 .upperlist{
     display:flex;
     justify-content:space-around;
-    width:1000px;
+    width:70%;
     margin:20px;
     padding:10px;
+    background-color:red;
 }
 .upperContent{
     display:flex;
@@ -100,15 +101,24 @@
 }
 .lowerbtns{
     display:flex;
-    width:1500px;
-    justify-content:space-around;
+    width:70%;
+    justify-content:end;
 }
 .lowerbtns button{
     padding:10px;
     font-size:1rem;
     box-shadow:0px 6px 5px 0px black;
 }
-
+.lowerbtns2{
+    display:flex;
+    width:70%;
+    justify-content:start;
+}
+.lowerbtns2 button{
+    padding:10px;
+    font-size:1rem;
+    box-shadow:0px 6px 5px 0px black;
+}
 .overlay{
     position:absolute;
     top:50%;
