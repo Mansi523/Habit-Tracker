@@ -40,21 +40,13 @@ const handleSelect=(d,h,index)=>{
 
 
 //  for calculating the total target
-let count=0;
-updateDay.forEach((x)=>{
-  if(x.status === "done"){
-    console.log("successfull");
-   count++;
-  }
-  else{
 
-   if(count>0){
-    console.log("unsuccessfull");
-
-    count--;
-   }
+let count = updateDay.reduce((accumulator, x) => {
+  if (x.status === "done") {
+    return accumulator + 1;
   }
-})
+  return accumulator;
+}, 0);
 
 const day = {
   updateDay,
