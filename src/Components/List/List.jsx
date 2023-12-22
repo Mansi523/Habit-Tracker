@@ -6,46 +6,99 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { useState,useEffect } from 'react';
 import Form from '../Form/Form';
 import { useDispatch,useSelector } from 'react-redux';
-import {fetchHabit} from "../../Redux/Reducer/habitlist"; 
+import {deleteHabit,showHabit,selectHabit} from "../../Redux/Reducer/habitlist"; 
+import { PiCheckCircleLight } from "react-icons/pi";
+import { PiXCircleLight } from "react-icons/pi";
 const List = ({handleModal,setModal,Modal}) => {
-  const [Isstatus,setIsstatus] = useState(false);
   const dispatch = useDispatch();
-const handleStatus = ()=>{
-setIsstatus(!Isstatus);
+
+
+
+const{habit,Isloading,Error}=useSelector((state)=>state.habitReducer);
+const [Edit,setEdit] = useState(null);
+// handle edit
+const handleEdit =(h)=>{
+setEdit(h);
+handleModal();
 }
 
-// habit fetched 
+//function for handling the selecting the status. 
+const handleSelect=(d,h,index)=>{
+  console.log("testtupd",d.status);
+
+  const updateDay = h.day.map((x,i)=>{
+    if(i=== index){
+      return{
+        ...x,
+        status:d.status==="nutral"?"done":d.status ==="done"?"undone":"nutral",
+      }
+    }
+    return x;
+  })
+  // console.log("testtupd",updateDay);
 
 
-useEffect(()=>{
-dispatch(fetchHabit());
-},[dispatch])
-// const{habit,Isloading,Error}=useSelector((state)=>state.habitReducer);
-const habit =useSelector((state)=>state.habitReducer);
 
-console.log(habit,"[][]][]--");
+//  for calculating the total target
+let count=0;
+updateDay.forEach((x)=>{
+  if(x.status === "done"){
+    console.log("successfull");
+   count++;
+  }
+  else{
+
+   if(count>0){
+    console.log("unsuccessfull");
+
+    count--;
+   }
+  }
+})
+
+const day = {
+  updateDay,
+  id:h.id,
+  target:count,
+}
+  dispatch(selectHabit(day));
+
+
+}
+
+
+
+
+
   return (
+    
     <>
-    <div className={style.containerlist}>
-      {habit?.map((habit,index)=>(
+        <div className={style.containerlist}>
+      {habit?.map((h,index)=>(
         <>
       <div className={style.upperlist}>
       <div className={style.upperContent}>
-        <span className={style.heading}>{habit.title}</span>
-         <span className={style.timing}>{habit.date}</span>
+        <span className={style.heading}>{h.title}</span>
+         <span className={style.timing}>{h?.date.slice(0,5)} {h?.date.slice(8,11)}</span>
+               
       </div>
       <div className={style.upperlistcontent}>
       {
-        Isstatus
+       h.show
         ?
         <div className={style.containerupperlist}>
           {
-        habit.day.map((d,index)=>(
+        h?.day?.map((d,index)=>(
             <div className={style.dailycontent}>
             <span className={style.days}>{d.day}</span>
             <span className={style.months}>{d.date}</span>
-            <div className={style.icons}>
-            <GiCircle fontSize={20}/>
+            <div className={style.icons} onClick={()=>handleSelect(d,h,index)}>
+              {
+               d.status==="nutral"? <GiCircle fontSize={20}/>:d.status === "done"? 
+               <PiCheckCircleLight fontSize={23}/>:<PiXCircleLight fontSize={22}/>
+
+              }
+           
             </div>
           </div>
 
@@ -54,23 +107,27 @@ console.log(habit,"[][]][]--");
           }
 
         <div className={style.deletediv}>
-        <RiDeleteBin6Line fontSize={20}/>
+        <RiDeleteBin6Line fontSize={20} onClick={()=>dispatch(deleteHabit(h.id))}/>
         </div>
       </div>
       :  
       <div className={style.containermonthly}>
           <div className={style.datemonthly}>
-            <span className={style.monthspan}>{habit.day[0].date}</span>
+            <span className={style.monthspan}>{h.day[0].date}</span>
           </div>
+        
           <div className={style.discrptionmonthly}>
-            <span>{habit.description}</span>
+            <span>{h.description}</span>
           </div>
           <div className={style.iconsformonthly}>
           <div className={style.iconedit}>
-          <MdOutlineModeEdit fontSize={20} />
+          <span className={style.monthspan}>{h.target}/7</span>
           </div>
           <div className={style.iconedit}>
-          <RiDeleteBin6Line fontSize={20} />
+          <MdOutlineModeEdit fontSize={20} onClick={()=>handleEdit(h)}/>
+          </div>
+          <div className={style.iconedit}>
+          <RiDeleteBin6Line fontSize={20} onClick={()=>dispatch(deleteHabit(h.id))}/>
           </div>
           </div>
         </div>
@@ -80,7 +137,7 @@ console.log(habit,"[][]][]--");
       </div>
       
       <div className={style.lowerbtns}>
-        <button onClick={handleStatus}>Show Daily</button>
+        <button onClick={()=>dispatch(showHabit(h))} >Show Daily</button>
       </div>
 
       </>
@@ -97,6 +154,8 @@ console.log(habit,"[][]][]--");
     { Modal &&
     <Form handleModal={handleModal}
           setModal={setModal}
+          Edit={Edit}
+          setEdit={setEdit}
     />
 
    }
@@ -106,12 +165,3 @@ console.log(habit,"[][]][]--");
 
 export default List
 
-// [
-// {
-//  day:mondayl,
-//  status:neutral,
-    //  date:xyz,
-
-// }
-
-// ]

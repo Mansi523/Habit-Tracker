@@ -2,26 +2,37 @@ import './App.css';
 import { Navbar } from './Components/Navbar/Navbar';
 import Main from './Components/Main/Main';
 import List from './Components/List/List';
-import { useState } from 'react';
+import { useDispatch,useSelector } from 'react-redux';
+import { useState,useEffect} from 'react';
+import { fetchHabit } from './Redux/Reducer/habitlist';
 function App() {
   const [Modal,setModal] = useState(false);
+  const dispatch = useDispatch(fetchHabit);
+  const{habit}=useSelector((state)=>state.habitReducer);
+  
   const handleModal = ()=>{
    setModal(!Modal);
    console.log(Modal);
   }
-  const arr = [1,2,3,4,5];
-
+useEffect(()=>{
+dispatch(fetchHabit());
+},[dispatch])
+  console.log("new",habit);
   return (
     <>
 <Navbar/>
 
 
 {
-   arr.length>0?
+   habit?.length>0?
    <List handleModal={handleModal}
    Modal={Modal}
    setModal={setModal}
-   />:<Main/>
+   />:<Main
+   handleModal={handleModal}
+   Modal={Modal}
+   setModal={setModal}
+   />
 
 }
   

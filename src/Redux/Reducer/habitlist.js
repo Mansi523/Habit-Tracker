@@ -1,32 +1,31 @@
 import {createSlice,createAsyncThunk} from "@reduxjs/toolkit";
 import {db} from "../../Firebase";
-import { collection, addDoc,onSnapshot } from "firebase/firestore"; 
-// function for adding habit
+import { collection, addDoc,onSnapshot, deleteDoc,doc,updateDoc} from "firebase/firestore"; 
+// function for adding habit -[post]
 
 export const handleAddHabit = createAsyncThunk("habittracker/handleAddHabit",async(habit)=>{
    
      
         try {
-          const docRef = await addDoc(collection(db, "habit"), {
+          const data = {
             title:habit.title,
             description:habit.description,
             show:false,
             target:0,
-            date:new Date(),
+            date:new Date().toLocaleTimeString(),
             day:habit.day,
-          });
+          } 
+          const docRef = await addDoc(collection(db, "habit"),data);
           console.log("Document written with ID: ", docRef);
 
-          return {success:true,
-                  message:"created successfully",
-          }
+          return data;
         } catch (error) {
           throw new Error(error);
         }
      }
 )
 
-// functin for fetching habit
+// functin for fetching habit -[get]
 
 export const fetchHabit = createAsyncThunk("habittracker/fetchHabit", async () => {
   try {
@@ -37,6 +36,7 @@ export const fetchHabit = createAsyncThunk("habittracker/fetchHabit", async () =
           id: doc.id,
         }));
         resolve(data);
+       
       });
 
       // Handle errors or cleanup here
@@ -48,7 +48,66 @@ export const fetchHabit = createAsyncThunk("habittracker/fetchHabit", async () =
   }
 });
 
+// function for deleting habit -[delete]
+export const deleteHabit = createAsyncThunk("habittracker/deleteHabit", async (id) => {
+  try {
 
+    await deleteDoc(doc(db, "habit",id));
+    return id;
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+// funtion for showing one habit at a time -[update].
+export const showHabit = createAsyncThunk("habittracker/showHabit", async (habit) => {
+  try {
+    const washingtonRef = doc(db, "habit",habit.id);
+    
+    // Set the "capital" field of the city 'DC'
+    await updateDoc(washingtonRef, {
+     show:!habit.show,
+    
+    });
+   return habit; 
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+// funtion for editing habit-[update].
+export const editHabit = createAsyncThunk("habittracker/editHabit", async (habit) => {
+  try {
+    console.log("**",habit);
+    const washingtonRef = doc(db, "habit",habit.id);
+    
+    // Set the "capital" field of the city 'DC'
+    await updateDoc(washingtonRef, {
+      title:habit.title,
+      description:habit.description,
+    });
+   return habit; 
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+// funtion for changing the status of the habit-[update].
+export const selectHabit = createAsyncThunk("habittracker/selectHabit", async (habit) => {
+  try {
+    console.log("kuch ajib",habit);
+    const washingtonRef = doc(db, "habit",habit.id);
+    
+    // Set the "capital" field of the city 'DC'
+    await updateDoc(washingtonRef, {
+      day:habit.updateDay,
+      target:habit.target,
+    });
+   return habit; 
+  } catch (error) {
+    throw new Error(error);
+  }
+});
 
 const initialState={
     habit:[],
@@ -68,6 +127,7 @@ const habit = createSlice({
       });
       builder.addCase(handleAddHabit.fulfilled,(state,action)=>{
         state.Isloading=false;
+        state.habit=[...state.habit,action.payload]
         state.Error=null;
       });
       builder.addCase(handleAddHabit.rejected,(state,action)=>{
@@ -84,12 +144,94 @@ const habit = createSlice({
         state.Isloading=false;
         state.Error=null;
         state.habit=action.payload;
-        console.log("***",action.payload);
       });
       builder.addCase(fetchHabit.rejected,(state,action)=>{
         state.Isloading=true;
         state.Error=action.error;
       });
+
+      
+      builder.addCase(deleteHabit.pending,(state,action)=>{
+        state.Isloading=true;
+        state.Error=null;
+      });
+      builder.addCase(deleteHabit.fulfilled,(state,action)=>{
+        state.Isloading=false;
+        state.Error=null;
+        state.habit=state.habit.filter((h,i)=>(
+          h.id!==action.payload
+        ))
+      });
+      builder.addCase(deleteHabit.rejected,(state,action)=>{
+        state.Isloading=true;
+        state.Error=action.error;
+      });
+
+
+      builder.addCase(showHabit.pending,(state,action)=>{
+        state.Isloading=true;
+        state.Error=null;
+      });
+      builder.addCase(showHabit.fulfilled,(state,action)=>{
+        state.Isloading=false;
+        state.Error=null;
+        state.habit=state.habit.map((h,i)=>{
+          if(h.id === action.payload.id){
+            return {...h,show:!action.payload.show}
+          }
+          return h;
+      })
+      });
+      builder.addCase(showHabit.rejected,(state,action)=>{
+        state.Isloading=true;
+        state.Error=action.error;
+      });
+  
+
+      builder.addCase(editHabit.pending,(state,action)=>{
+        state.Isloading=true;
+        state.Error=null;
+      });
+      builder.addCase(editHabit.fulfilled,(state,action)=>{
+        state.Isloading=false;
+        state.Error=null;
+        state.habit=state.habit.map((h,i)=>{
+          if(h.id === action.payload.id){
+            return {...h,title:action.payload.title,
+              description:action.payload.description,
+            }
+          }
+          return h;
+      })
+      });
+      builder.addCase(editHabit.rejected,(state,action)=>{
+        state.Isloading=true;
+        state.Error=action.error;
+      });
+
+
+      builder.addCase(selectHabit.pending,(state,action)=>{
+        state.Isloading=true;
+        state.Error=null;
+      });
+      builder.addCase(selectHabit.fulfilled,(state,action)=>{
+        state.Isloading=false;
+        state.Error=null;
+        state.habit=state.habit.map((h,i)=>{
+          if(h.id === action.payload.id){
+            return {...h,day:action.payload.updateDay,
+              target:action.payload.target,
+            }
+
+          }
+          return h;
+      })
+      });
+      builder.addCase(selectHabit.rejected,(state,action)=>{
+        state.Isloading=true;
+        state.Error=action.error;
+      });
+      
     }
 
 })

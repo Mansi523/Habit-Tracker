@@ -2,12 +2,12 @@ import React from 'react'
 import style from '../Main/Main.module.css';
 import { useState } from 'react';
 import Form from '../Form/Form';
-const Main = () => {
- const [Modal,setModal] = useState(false);
- const handleModal = ()=>{
-  setModal(!Modal);
-  console.log(Modal);
- }
+const Main = ({Modal,setModal,handleModal}) => {
+//  const [Modal,setModal] = useState(false);
+//  const handleModal = ()=>{
+//   setModal(!Modal);
+//   console.log(Modal);
+//  }
 
   return (
    <>
@@ -23,7 +23,10 @@ what do you want to start doing every day? :)</p>
    </div>
   </div>
  { Modal &&
-   <Form handleModal={handleModal}/>
+   <Form handleModal={handleModal}
+   setModal={setModal}
+   />
+ 
    }
    </>
   )

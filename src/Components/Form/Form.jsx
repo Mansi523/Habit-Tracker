@@ -1,13 +1,34 @@
 import React from 'react'
 import style from "../List/List.module.css";
 import {useDispatch} from "react-redux";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {handleAddHabit} from "../../Redux/Reducer/habitlist";
 import Swal from 'sweetalert2';
-const Form = ({handleModal,setModal}) => {
+import {editHabit} from "../../Redux/Reducer/habitlist";
+const Form = ({handleModal,setModal,Edit,setEdit}) => {
   const dispatch = useDispatch();
   const [Title,setTitle]=useState("");  
   const [Discription,setDiscription]=useState("");
+
+
+  useEffect(()=>{
+    if(Edit){
+      setTitle(Edit.title);
+      setDiscription(Edit.description);
+    }
+  },[Edit])
+
+  const updateHabit =()=>{
+    const data = {
+      ...Edit,title:Title,description:Discription,
+    }
+  dispatch(editHabit(data));
+  setTitle("");
+  setDiscription("");
+  setEdit(null);
+  handleModal();
+  }
+
   const handleSave=()=>{
       const habitData = [];
       
@@ -26,13 +47,13 @@ const Form = ({handleModal,setModal}) => {
       console.log(habitData);
      
       function getDayName(dayIndex) {
-        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         return days[dayIndex];
       }
       
       function formatDate(date) {
         const dayOfMonth = date.getDate();
-        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         const monthName = monthNames[date.getMonth()];
         
         return `${dayOfMonth} ${monthName}`;
@@ -47,6 +68,15 @@ const Form = ({handleModal,setModal}) => {
     setDiscription("");
     setModal(false);
   }
+
+// function for handling cancel function
+const cancelHabit=()=>{
+  setTitle("");
+  setDiscription("");
+  setEdit(null);
+  handleModal();
+}
+
   return (
     <div className={style.Modalform}>
     <div className={style.overlay} >
@@ -55,8 +85,8 @@ const Form = ({handleModal,setModal}) => {
       <input className={style.inputfield} type ="text" value={Discription} placeholder='Description' onChange={(e)=>setDiscription(e.target.value)}/>
       </div>
     <div className={style.btnsdiv}>
-     <button className={style.cancelmodal} onClick={handleModal}>Cancel</button>
-     <button className={style.savemodal} onClick={handleSave}>Save</button>
+     <button className={style.cancelmodal}  onClick={()=>{Edit?cancelHabit():handleModal()}}>Cancel</button>
+     <button className={style.savemodal} onClick={()=>{Edit?updateHabit():handleSave()}}>{Edit?"Update":"Save"}</button>
      </div>
     </div>
  </div>
