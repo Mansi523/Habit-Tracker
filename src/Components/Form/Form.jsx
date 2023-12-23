@@ -1,16 +1,25 @@
 import React from 'react'
+// imported css for the list componenet
 import style from "../List/List.module.css";
+// imported useDispatch from react-redux.
 import {useDispatch} from "react-redux";
+// imported useState,useEffect from react.
 import { useState, useEffect } from 'react';
+// imported handleAddHabit.
 import {handleAddHabit} from "../../Redux/Reducer/habitlist";
+// imported swal from seetalert2
 import Swal from 'sweetalert2';
+// imported editHabit.
 import {editHabit} from "../../Redux/Reducer/habitlist";
+
 const Form = ({handleModal,setModal,Edit,setEdit}) => {
+  // created dispatch from useDispatch
   const dispatch = useDispatch();
+  // created useState for Title and Discription
   const [Title,setTitle]=useState("");  
   const [Discription,setDiscription]=useState("");
 
-
+// useEffect for setting the value in setTitle and setDiscription when we click on the edit icon  
   useEffect(()=>{
     if(Edit){
       setTitle(Edit.title);
@@ -18,6 +27,8 @@ const Form = ({handleModal,setModal,Edit,setEdit}) => {
     }
   },[Edit])
 
+  // updateHabit for dispatching editHabit and empting the values in the states 
+    
   const updateHabit =()=>{
     const data = {
       ...Edit,title:Title,description:Discription,
@@ -29,6 +40,7 @@ const Form = ({handleModal,setModal,Edit,setEdit}) => {
   handleModal();
   }
 
+  // handleSave for deting the the values date wise and monthwise in the habitlist
   const handleSave=()=>{
       const habitData = [];
       
@@ -77,6 +89,7 @@ const cancelHabit=()=>{
 }
 
   return (
+  // modal for entering the text and description.
     <div className={style.Modalform}>
     <div className={style.overlay} >
       <div className={style.inputs}>

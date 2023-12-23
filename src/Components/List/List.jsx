@@ -1,28 +1,33 @@
 import React from 'react'
+// importing css for list component
 import style from "../List/List.module.css";
+// imported icons from react-icons.
 import { GiCircle } from "react-icons/gi";
 import { MdOutlineModeEdit } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { useState,useEffect } from 'react';
-import Form from '../Form/Form';
-import { useDispatch,useSelector } from 'react-redux';
-import {deleteHabit,showHabit,selectHabit} from "../../Redux/Reducer/habitlist"; 
 import { PiCheckCircleLight } from "react-icons/pi";
 import { PiXCircleLight } from "react-icons/pi";
+// imported useState from react.
+import { useState,useEffect } from 'react';
+// imported form component
+import Form from '../Form/Form';
+// imported useDispatch and useSelector from react-redux
+import { useDispatch,useSelector } from 'react-redux';
+// imported function from habitlist
+import {deleteHabit,showHabit,selectHabit} from "../../Redux/Reducer/habitlist"; 
+
 const List = ({handleModal,setModal,Modal}) => {
+  // created dispatch from useDispatch
   const dispatch = useDispatch();
-
-
-
+  // imported initialstate from useSelector 
 const{habit,Isloading,Error}=useSelector((state)=>state.habitReducer);
+// imported Edit from UseState
 const [Edit,setEdit] = useState(null);
 // handle edit
 const handleEdit =(h)=>{
 setEdit(h);
 handleModal();
 }
-
-
 
 //function for handling the selecting the status. 
 const handleSelect=(d,h,index)=>{
@@ -37,7 +42,6 @@ const handleSelect=(d,h,index)=>{
     }
     return x;
   })
-  // console.log("testtupd",updateDay);
 
 
 
@@ -60,12 +64,11 @@ const day = {
 
 }
 
+// function for handling the status for previous days and the future.
 const statusIsUpdate = (d,h,index)=>{
    const date=new Date();
    const selectedDate = new Date();
    selectedDate.setDate(d.date.slice(0,2));
-  // console.log("testdate",selectedDate,d.date.slice(0,2));
-    // handleSelect(d,h,index);
    if(date>=selectedDate){
     handleSelect(d,h,index);
     return;
@@ -75,12 +78,11 @@ const statusIsUpdate = (d,h,index)=>{
   
   }
 
-
- console.log("habit",habit);
   return (
     
     <>
         <div className={style.containerlist}>
+          {/* for the lists to diaplayed in the habit tracker app */}
       {habit?.map((h,index)=>(
         <>
       <div className={style.upperlist}>
@@ -158,6 +160,7 @@ const statusIsUpdate = (d,h,index)=>{
         <button onClick={handleModal}>+ Add Habit</button>
       </div>
     </div>
+    {/* modal to be opened when clicking on the addhabit */}
     { Modal &&
     <Form handleModal={handleModal}
           setModal={setModal}

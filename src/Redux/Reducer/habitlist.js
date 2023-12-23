@@ -1,11 +1,14 @@
+// imported createSlice and createAsyncThunk from redux toolkit.
 import {createSlice,createAsyncThunk} from "@reduxjs/toolkit";
+// imported db from firebase.
 import {db} from "../../Firebase";
-import { collection, addDoc,onSnapshot, deleteDoc,doc,updateDoc} from "firebase/firestore"; 
+// imported collection,addDoc,onSnapshot,deleteDoc,doc,updateDoc from firebase firestore.
+import {collection,addDoc,onSnapshot,deleteDoc,doc,updateDoc} from "firebase/firestore"; 
+
+
 // function for adding habit -[post]
 
 export const handleAddHabit = createAsyncThunk("habittracker/handleAddHabit",async(habit)=>{
-   
-     
         try {
           const data = {
             title:habit.title,
@@ -112,18 +115,25 @@ export const selectHabit = createAsyncThunk("habittracker/selectHabit", async (h
   }
 });
 
+// initialState.
 const initialState={
     habit:[],
     Isloading:false,
     Error:null,
 };
+
+// created habit from createSlice.
 const habit = createSlice({
      name:"habittracker",
      initialState,
     reducers:{
     
     },
+    // extrareducer for handild the api calls
     extraReducers:(builder)=>{
+
+      // buider function for handleAddHabit
+
       builder.addCase(handleAddHabit.pending,(state,action)=>{
         state.Isloading=true;
         state.Error=null;
@@ -138,6 +148,7 @@ const habit = createSlice({
         state.Error=action.error;
       });
 
+// builder function for fetchHabit with three states pending,fulfilled and rejected.
 
       builder.addCase(fetchHabit.pending,(state,action)=>{
         state.Isloading=true;
@@ -153,6 +164,7 @@ const habit = createSlice({
         state.Error=action.error;
       });
 
+// builder function for deleteHabit with three states pending,fulfilled and rejected.
       
       builder.addCase(deleteHabit.pending,(state,action)=>{
         state.Isloading=true;
@@ -170,6 +182,8 @@ const habit = createSlice({
         state.Error=action.error;
       });
 
+// builder function for showHabit with three states pending,fulfilled and rejected.
+     
 
       builder.addCase(showHabit.pending,(state,action)=>{
         state.Isloading=true;
@@ -190,6 +204,7 @@ const habit = createSlice({
         state.Error=action.error;
       });
   
+// builder function for editHabit with three states pending,fulfilled and rejected.
 
       builder.addCase(editHabit.pending,(state,action)=>{
         state.Isloading=true;
@@ -211,6 +226,8 @@ const habit = createSlice({
         state.Isloading=true;
         state.Error=action.error;
       });
+
+// builder function for selectHabit with three states pending,fulfilled and rejected.
 
 
       builder.addCase(selectHabit.pending,(state,action)=>{
