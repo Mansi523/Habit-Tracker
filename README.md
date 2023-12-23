@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Habit Tracker App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Habit Tracker app! This application empowers you to cultivate positive habits by providing an intuitive and flexible tracking system. Whether you're into reading, hitting the gym, or any other habit you want to develop, this app is designed to make your habit-tracking experience seamless and enjoyable.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### 1. **Add Multiple Habits**
+   - Easily manage and track multiple habits.
 
-### `npm start`
+### 2. **Track Daily Habits**
+   - Each habit comes with three statuses:
+     - **Done:** Mark the habit as completed for the day.
+     - **Not Done:** Indicate that the habit wasn't accomplished.
+     - **None:** No action taken on the habit for the day.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3. **All Current Habits View**
+   - View and manage all your habits in one central location.
+   - Add new habits with a single click.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 4. **7-Day Habit History**
+   - Visualize the status of each habit for the past 7 days.
+   - Effortlessly mark today's habit and toggle between statuses.
+   - Modify the status of any habit for the previous 6 days, ensuring flexibility.
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React:** A declarative and efficient JavaScript library for building user interfaces.
+- **Redux:** A predictable state container for managing the application's state.
+- **React Router:** Declarative routing for React applications.
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/habit-tracker-app.git
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies:**
+   ```bash
+   cd habit-tracker-app
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Run the app:**
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+   The app will be accessible at `http://localhost:3000` by default.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Folder Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **src/components:** React components for the app.
+- **src/redux:** Redux actions, reducers, and store configuration.
+- **src/routes:** Application routes using React Router.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Add Habits:**
+   - Navigate to the "All Habits" view and use the "Add Habit" button to introduce new habits.
 
-## Learn More
+2. **Track Daily Habits:**
+   - Toggle the status of each habit for today and the previous 6 days in the "7-Day View."
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Modify Habits:**
+   - Change the status of a habit for any day, offering flexibility in habit tracking.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Author
 
-### Code Splitting
+- **Your Name**
+  - GitHub: [Your GitHub Profile](https://github.com/your-username)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Images
 
-### Analyzing the Bundle Size
+![Habit Tracker App Screenshot 1](url-to-screenshot-1)
+![Habit Tracker App Screenshot 2](url-to-screenshot-2)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributions
 
-### Making a Progressive Web App
+Contributions are highly encouraged! Feel free to open issues, share suggestions, or submit pull requests to enhance the app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy habit tracking! 🚀
