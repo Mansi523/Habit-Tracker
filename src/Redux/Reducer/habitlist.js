@@ -14,11 +14,12 @@ export const handleAddHabit = createAsyncThunk("habittracker/handleAddHabit",asy
             target:0,
             date:new Date().toLocaleTimeString(),
             day:habit.day,
+            
           } 
           const docRef = await addDoc(collection(db, "habit"),data);
-          console.log("Document written with ID: ", docRef);
+          console.log("Document written with ID: ", docRef.id);
 
-          return data;
+          return {...data,id:docRef.id};
         } catch (error) {
           throw new Error(error);
         }
@@ -35,6 +36,7 @@ export const fetchHabit = createAsyncThunk("habittracker/fetchHabit", async () =
           ...doc.data(),
           id: doc.id,
         }));
+        console.log("fetchhabit",data);
         resolve(data);
        
       });
@@ -51,7 +53,7 @@ export const fetchHabit = createAsyncThunk("habittracker/fetchHabit", async () =
 // function for deleting habit -[delete]
 export const deleteHabit = createAsyncThunk("habittracker/deleteHabit", async (id) => {
   try {
-
+  console.log("delete",id);
     await deleteDoc(doc(db, "habit",id));
     return id;
   } catch (error) {
@@ -61,9 +63,10 @@ export const deleteHabit = createAsyncThunk("habittracker/deleteHabit", async (i
 
 // funtion for showing one habit at a time -[update].
 export const showHabit = createAsyncThunk("habittracker/showHabit", async (habit) => {
+  console.log("showhabit",habit);
   try {
     const washingtonRef = doc(db, "habit",habit.id);
-    
+  
     // Set the "capital" field of the city 'DC'
     await updateDoc(washingtonRef, {
      show:!habit.show,

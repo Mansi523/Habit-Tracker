@@ -35,12 +35,11 @@ const Form = ({handleModal,setModal,Edit,setEdit}) => {
       for (let i = 0; i < 7; i++) {
         const nextDate = new Date();
         nextDate.setDate(nextDate.getDate() + i);
-    
         habitData.push({
           date: formatDate(nextDate),
           day: getDayName(nextDate.getDay()),
           status:"nutral",
-          
+          // currentDate:nextDate,
         });
       }
     

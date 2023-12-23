@@ -22,6 +22,8 @@ setEdit(h);
 handleModal();
 }
 
+
+
 //function for handling the selecting the status. 
 const handleSelect=(d,h,index)=>{
   console.log("testtupd",d.status);
@@ -58,10 +60,23 @@ const day = {
 
 }
 
+const statusIsUpdate = (d,h,index)=>{
+   const date=new Date();
+   const selectedDate = new Date();
+   selectedDate.setDate(d.date.slice(0,2));
+  // console.log("testdate",selectedDate,d.date.slice(0,2));
+    // handleSelect(d,h,index);
+   if(date>=selectedDate){
+    handleSelect(d,h,index);
+    return;
+   }else{
+    alert("u can't change the status");
+   }
+  
+  }
 
 
-
-
+ console.log("habit",habit);
   return (
     
     <>
@@ -84,7 +99,7 @@ const day = {
             <div className={style.dailycontent}>
             <span className={style.days}>{d.day}</span>
             <span className={style.months}>{d.date}</span>
-            <div className={style.icons} onClick={()=>handleSelect(d,h,index)}>
+            <div className={style.icons} onClick={()=>statusIsUpdate(d,h,index)}>
               {
                d.status==="nutral"? <GiCircle fontSize={20}/>:d.status === "done"? 
                <PiCheckCircleLight fontSize={23}/>:<PiXCircleLight fontSize={22}/>
@@ -99,7 +114,7 @@ const day = {
           }
 
         <div className={style.deletediv}>
-        <RiDeleteBin6Line fontSize={20} onClick={()=>dispatch(deleteHabit(h.id))}/>
+        <RiDeleteBin6Line fontSize={20} onClick={()=>dispatch(deleteHabit(h?.id))}/>
         </div>
       </div>
       :  
