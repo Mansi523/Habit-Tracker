@@ -103,8 +103,8 @@ const statusIsUpdate = (d,h,index)=>{
             <span className={style.months}>{d.date}</span>
             <div className={style.icons} onClick={()=>statusIsUpdate(d,h,index)}>
               {
-               d.status==="nutral"? <GiCircle fontSize={20}/>:d.status === "done"? 
-               <PiCheckCircleLight fontSize={23}/>:<PiXCircleLight fontSize={22}/>
+               d.status==="nutral"? <GiCircle fontSize={20} className={style.icons}/>:d.status === "done"? 
+               <PiCheckCircleLight fontSize={23}/>:<PiXCircleLight  fontSize={22}/>
 
               }
            
@@ -116,7 +116,7 @@ const statusIsUpdate = (d,h,index)=>{
           }
 
         <div className={style.deletediv}>
-        <RiDeleteBin6Line fontSize={20} onClick={()=>dispatch(deleteHabit(h?.id))}/>
+        <RiDeleteBin6Line className={style.deletediv} fontSize={20} onClick={()=>dispatch(deleteHabit(h?.id))}/>
         </div>
       </div>
       :  
@@ -132,11 +132,11 @@ const statusIsUpdate = (d,h,index)=>{
           <div className={style.iconedit}>
           <span className={style.monthspan}>{h.target}/7</span>
           </div>
-          <div className={style.iconedit}>
-          <MdOutlineModeEdit fontSize={20} onClick={()=>handleEdit(h)}/>
+          <div>
+          <MdOutlineModeEdit className={style.iconedit} fontSize={20} onClick={()=>handleEdit(h)}/>
           </div>
-          <div className={style.iconedit}>
-          <RiDeleteBin6Line fontSize={20} onClick={()=>dispatch(deleteHabit(h.id))}/>
+          <div >
+          <RiDeleteBin6Line className={style.iconedit} fontSize={20} onClick={()=>dispatch(deleteHabit(h.id))}/>
           </div>
           </div>
         </div>

@@ -12,7 +12,6 @@
     width:70%;
     margin:20px;
     padding:10px;
-    /* background-color:red; */
 }
 .upperContent{
     display:flex;
@@ -168,8 +167,521 @@
 
 /* code for mobile devices */
 
-/* @media screen and (max-width:1331px) {
-    .box{
-        width:80%;
+@media screen and (max-width:948px) {
+    .heading{
+        font-size:1.5rem;
+        font-weight:600;
+        color:#000;
+        letter-spacing:2px;
     }
-} */
+    .timing{
+        font-size:0.8rem;
+        
+    }
+    .containerupperlist{
+ 
+    width:500px !important;
+
+}.dailycontent{
+    margin:2px;
+    padding:6px;
+  
+}
+.days{
+  font-size:1rem;
+  padding-left:12px;
+}
+.months{
+    font-size:0.9rem;
+    padding:5px;
+}
+
+.icons{
+    padding:2px;
+}
+.deletediv{
+   padding:10px;
+   margin:5px;
+}
+.containermonthly{
+    width:500px !important;
+    height:100px;
+}
+.datemonthly{
+    margin-left:60px;
+}
+.monthspan{
+ font-size:1rem;
+}
+.discrptionmonthly{
+  margin-top:20px;
+}
+.discrptionmonthly span{
+    font-size:1rem;
+}
+.iconsformonthly{
+    margin:15px;
+    margin-right:40px;
+    padding:20px;
+}
+.iconedit{
+    padding:10px;
+    font-size:15px;
+}
+.lowerbtns{
+    width:70%;
+
+}
+.lowerbtns button{
+    padding:10px;
+    font-size:0.8rem;
+    box-shadow:0px 6px 5px 0px black;
+}
+.lowerbtns2{
+    display:flex;
+    width:70%;
+    justify-content:start;
+}
+.lowerbtns2 button{
+    padding:10px;
+    margin:20px;
+    font-size:1rem;
+    box-shadow:0px 6px 5px 0px black;
+}
+.overlay{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-70%,-80%);
+    background:rgba(0, 0, 0, 0.3);
+    padding:14px 28px;
+    border-radius:6px;
+    max-width:auto;
+    min-width:100px;
+    box-sizing:border-box;
+}
+
+.inputfield{
+   border:none;
+   outline:none;
+   padding:8px;
+   margin:10px;
+   width:400px;
+    font-size:1rem;
+   background-color:rgb(225, 219, 219);
+   color:grey;
+}
+}
+
+@media screen and (max-width:665px) {
+    .upperlist{
+        display:flex;
+        justify-content:space-around;
+        width:40% !important;
+        margin:15px;
+        margin-left:80px !important;
+        padding:30px;
+    }
+    .heading{
+        font-size:1.3rem;
+        font-weight:600;
+        letter-spacing:1px;
+    }
+    .timing{
+        font-size:0.8rem;
+    }
+    .containerupperlist{
+        width:430px !important;
+    }
+    .dailycontent{
+        padding:3px !important;
+    }
+
+    .containermonthly{
+        width:450px !important;
+        height:100px;
+        margin-left:80px !important;
+    }
+    .datemonthly{
+        margin-left:60px;
+    }
+    .monthspan{
+     font-size:1rem;
+    }
+    .discrptionmonthly{
+      margin-top:25px;
+    }
+    .discrptionmonthly span{
+        font-size:1rem;
+    }
+    .iconsformonthly{
+        margin:10px;
+        margin-right:30px;
+        padding:10px;
+    }
+    .iconedit svg{
+        padding:5px;
+        font-size:10px !important;
+    }
+    .lowerbtns{
+        width:95%;
+    }
+    
+}
+@media screen and (max-width:651px) {
+    .upperlist{
+        display:flex;
+        justify-content:space-around;
+        width:70%;
+        margin:15px !important;
+        padding:10px;
+    }
+    .containerupperlist{
+        width:400px !important;
+    }
+    .days{
+        font-size:0.8rem;
+        padding-left:12px;
+      }
+      .months{
+          font-size:0.8rem;
+          padding:5px;
+      }
+      
+      .icons{
+          padding:2px;
+      }
+      .deletediv svg{
+         padding:5px;
+         margin:2px;
+         font-size:15px;
+      }
+      .lowerbtns{
+        width:85%;
+    }
+    .containermonthly{
+        width:430px !important;
+        height:90px;
+        margin-left:80px !important;
+    }
+}
+@media screen and (max-width:632px) {
+    .upperlist{
+        display:flex;
+        justify-content:space-around;
+        width:70%;
+        margin:15px;
+        padding:10px;
+    }
+    .containermonthly{
+        width:420px !important;
+        height:90px;
+        margin-left:80px !important;
+    }
+    .datemonthly{
+        margin-left:40px;
+    }
+    .monthspan{
+     font-size:1rem;
+    }
+    .discrptionmonthly{
+      margin-top:28px;
+    }
+    .discrptionmonthly span{
+        font-size:0.9rem;
+    }
+    .iconsformonthly{
+        margin:10px;
+        margin-right:30px;
+        padding:10px;
+    }
+    .iconedit svg{
+        padding:5px;
+        font-size:10px !important;
+    }
+    .lowerbtns{
+        width:86%;
+    }
+    .lowerbtns button{
+        padding:6px;
+        font-size:0.8rem;
+    }
+    .lowerbtns2{
+        display:flex;
+        width:70%;
+        justify-content:start;
+    }
+    .lowerbtns2 button{
+        padding:10px;
+        margin:20px;
+        font-size:1rem;
+        box-shadow:0px 6px 5px 0px black;
+    }
+}
+@media screen and (max-width:625px) {
+    .upperlist{
+        display:flex;
+        justify-content:space-around;
+        width:70%;
+        margin:15px !important;
+        padding:10px;
+    }
+    .containerupperlist{
+        width:390px !important;
+    }
+    .days{
+        font-size:0.8rem;
+        padding-left:12px;
+      }
+      .months{
+          font-size:0.8rem;
+          padding:5px;
+      }
+      
+      .icons{
+          padding:2px;
+      }
+      .deletediv svg{
+         padding:5px;
+         margin:2px;
+         font-size:15px;
+      }
+      .lowerbtns{
+        width:85%;
+    }
+    .containermonthly{
+        width:400px !important;
+        height:90px;
+        margin-left:80px !important;
+    }
+}
+
+@media screen and (max-width:625px) {
+
+      .lowerbtns{
+        width:87%;
+    }
+ 
+}
+@media screen and (max-width:610px) {
+
+    .lowerbtns{
+      width:88%;
+  }
+  .containermonthly{
+    width:420px !important;
+    height:90px;
+    margin-left:70px !important;
+}
+}
+
+@media screen and (max-width:600px) {
+    .lowerbtns{
+      width:90%;
+  }
+}
+
+@media screen and (max-width:580px) {
+    .lowerbtns{
+      width:93%;
+  }
+  .containermonthly{
+    width:410px !important;
+    height:90px;
+    margin-left:70px !important;
+}
+}
+@media screen and (max-width:550px) {
+    .containerupperlist{
+        width:370px !important;
+    }
+    .days{
+        font-size:0.7rem;
+        padding-left:12px;
+      }
+      .months{
+          font-size:0.7rem;
+          padding:5px;
+      }
+      .icons{
+          padding:1px;
+      }
+      .deletediv svg{
+         padding:5px;
+         margin:2px;
+         font-size:15px;
+      }
+    .lowerbtns{
+      width:93%;
+  }
+  .containermonthly{
+    width:390px !important;
+    height:90px;
+    margin-left:70px !important;
+}
+}
+@media screen and (max-width:530px) {
+    .containerupperlist{
+        width:330px !important;
+    }
+    .days{
+        font-size:0.5rem;
+        padding-left:12px;
+      }
+      .months{
+          font-size:0.5rem;
+          padding:5px;
+      }
+      .icons{
+        font-size:10px;
+      }
+      .deletediv svg{
+         padding:5px;
+         margin:2px;
+         font-size:15px;
+      }
+    .lowerbtns{
+      width:90%;
+  }
+  .containermonthly{
+    width:355px !important;
+    height:80px;
+    margin-left:80px !important;
+}
+.datemonthly{
+    margin-left:30px;
+}
+.monthspan{
+ font-size:0.8rem;
+}
+.discrptionmonthly{
+  margin-top:23px;
+}
+.discrptionmonthly span{
+    font-size:0.9rem;
+}
+}
+@media screen and (max-width:517px) {
+    .lowerbtns{
+      width:93%;
+  }
+}
+@media screen and (max-width:490px) {
+    .containerupperlist{
+        width:320px !important;
+    }
+    .days{
+        font-size:0.5rem;
+        padding-left:12px;
+      }
+      .months{
+          font-size:0.5rem;
+          padding:5px;
+      }
+      .icons{
+        font-size:10px;
+      }
+      .deletediv svg{
+         padding:3px;
+         font-size:10px;
+      }
+      .lowerbtns{
+        width:94%;
+    }
+}
+@media screen and (max-width:483px) {
+    .containerupperlist{
+        width:310px !important;
+    }
+    .containermonthly{
+        width:330px !important;
+        height:80px;
+        margin-left:80px !important;
+    }
+
+}
+@media screen and (max-width:470px) {
+    .containerupperlist{
+        width:310px !important;
+        margin-left:60px !important;
+    }
+    .containermonthly{
+        width:320px !important;
+        height:80px;
+        margin-left:60px !important;
+    }
+    .lowerbtns{
+        width:87%;
+    }
+}
+@media screen and (max-width:434px) {
+    .containerupperlist{
+        width:320px !important;
+        margin-left:50px !important;
+    }
+    .containermonthly{
+        width:320px !important;
+        height:80px;
+        margin-left:50px !important;
+    }
+    .lowerbtns{
+        width:92%;
+    }
+}
+@media screen and (max-width:420px) {
+    .heading{
+        font-size:1.2rem;
+        font-weight:600;
+        letter-spacing:2px;
+    }
+    .timing{
+        font-size:0.8rem !important;
+        
+    }
+    .containerupperlist{
+        width:310px !important;
+        margin-left:45px !important;
+    }
+    .containermonthly{
+        width:310px !important;
+        height:80px;
+        margin-left:45px !important;
+    }
+    .datemonthly{
+        margin-left:40px;
+    }
+    .monthspan{
+     font-size:1rem;
+    }
+    .discrptionmonthly{
+      margin-top:15px;
+    }
+    .discrptionmonthly span{
+        font-size:0.8rem;
+    }
+  
+    .lowerbtns{
+        width:88%;
+    }
+    .iconedit svg{
+        font-size:5px !important;
+    }
+}
+
+@media screen and (max-width:399px) {
+    .containerupperlist{
+        width:300px !important;
+        margin-left:30px !important;
+    }
+    .containermonthly{
+        width:320px !important;
+        height:80px;
+        margin-left:30px !important;
+    }
+    .lowerbtns{
+        width:78%;
+    }
+    .upperContent{
+       margin-left:20px;
+    }
+}
