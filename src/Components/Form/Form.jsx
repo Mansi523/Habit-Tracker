@@ -7,8 +7,8 @@ import {useDispatch} from "react-redux";
 import { useState, useEffect } from 'react';
 // imported handleAddHabit.
 import {handleAddHabit} from "../../Redux/Reducer/habitlist";
-// imported swal from seetalert2
-import Swal from 'sweetalert2';
+// imported toast from react-hot-toast/
+import toast, { Toaster } from 'react-hot-toast';
 // imported editHabit.
 import {editHabit} from "../../Redux/Reducer/habitlist";
 
@@ -74,7 +74,15 @@ const Form = ({handleModal,setModal,Edit,setEdit}) => {
     day:habitData,
   }     
     dispatch(handleAddHabit(habit));
-    Swal.fire("SweetAlert2 is working!");
+    toast('habit added Successfully!',
+    {
+      style: {
+        borderRadius: '10px',
+        background: '#333',
+        color: '#fff',
+      },
+    }
+  );
     setTitle("");
     setDiscription("");
     setModal(false);

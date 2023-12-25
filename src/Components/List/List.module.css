@@ -1,6 +1,8 @@
+/* css for the list component */
+
 .containerlist{
-    /* height:100vh; */
-    background-image:url("https://images.pexels.com/photos/3826683/pexels-photo-3826683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  
+    height:100%;
+    background-image:url("https://images.pexels.com/photos/3094211/pexels-photo-3094211.jpeg?auto=compress&cs=tinysrgb&w=600");  
     background-size:cover;
     display:flex;
     align-items:center;
@@ -273,6 +275,35 @@
 }
 }
 
+@media screen and (max-width:697px){
+    .overlay{
+        position:absolute;
+        top:50% !important;
+        left:20% !important;
+        transform:translate(-20%,-70%) !important;
+        background:rgba(0, 0, 0, 0.3);
+        padding:12px 23px !important;
+        border-radius:6px;
+        max-width:auto;
+        min-width:200px !important;
+        box-sizing:border-box;
+    }
+
+    .inputfield{
+       border:none;
+       outline:none;
+       padding:8px;
+       margin:10px;
+       width:400px;
+        font-size:1rem;
+       background-color:rgb(225, 219, 219);
+       color:grey;
+    }
+
+}
+
+
+
 @media screen and (max-width:665px) {
     .upperlist{
         display:flex;
@@ -520,6 +551,34 @@
     margin-left:70px !important;
 }
 }
+
+@media screen and (max-width:534px){
+    .overlay{
+        position:absolute;
+        top:50% !important;
+        left:25% !important;
+        transform:translate(-20%,-70%) !important;
+        background:rgba(0, 0, 0, 0.3);
+        padding:12px 23px !important;
+        border-radius:6px;
+        max-width:auto;
+        min-width:200px !important;
+        box-sizing:border-box;
+    }
+
+    .inputfield{
+       border:none;
+       outline:none;
+       padding:8px;
+       margin:10px;
+       width:350px !important;
+        font-size:1rem;
+       background-color:rgb(225, 219, 219);
+       color:grey;
+    }
+
+}
+
 @media screen and (max-width:530px) {
     .containerupperlist{
         width:330px !important;
@@ -602,8 +661,8 @@
 }
 @media screen and (max-width:470px) {
     .containerupperlist{
-        width:310px !important;
-        margin-left:60px !important;
+        width:300px !important;
+        margin-left:50px !important;
     }
     .containermonthly{
         width:320px !important;
@@ -612,6 +671,35 @@
     }
     .lowerbtns{
         width:87%;
+    }
+    .overlay{
+        position:absolute;
+        top:50% !important;
+        left:25% !important;
+        transform:translate(-20%,-70%) !important;
+        background:rgba(0, 0, 0, 0.3);
+        padding:12px 15px !important;
+        border-radius:6px;
+        max-width:auto;
+        min-width:200px !important;
+        box-sizing:border-box;
+    }
+
+    .inputfield{
+       border:none;
+       outline:none;
+       padding:8px;
+       margin:10px !important;
+       width:320px !important;
+        font-size:1rem;
+       background-color:rgb(225, 219, 219);
+       color:grey;
+    }
+    .btnsdiv button{
+        width:200px !important;
+        padding:7px !important;
+        margin:7px !important;
+        font-size:1rem !important;
     }
 }
 @media screen and (max-width:434px) {
@@ -666,6 +754,59 @@
     .iconedit svg{
         font-size:5px !important;
     }
+    .overlay{
+        position:absolute;
+        top:50% !important;
+        left:25% !important;
+        transform:translate(-20%,-70%) !important;
+        background:rgba(0, 0, 0, 0.3);
+        padding:12px 15px !important;
+        border-radius:6px;
+        max-width:auto;
+        min-width:200px !important;
+        box-sizing:border-box;
+    }
+
+    .inputfield{
+       border:none;
+       outline:none;
+       padding:8px;
+       margin:10px !important;
+       width:320px !important;
+        font-size:1rem;
+       background-color:rgb(225, 219, 219);
+       color:grey;
+    }
+    .btnsdiv button{
+        width:200px !important;
+        padding:7px !important;
+        margin:7px !important;
+        font-size:1rem !important;
+    }
+    .overlay{
+        position:absolute;
+        top:50% !important;
+        left:25% !important;
+        transform:translate(-20%,-70%) !important;
+        background:rgba(0, 0, 0, 0.3);
+        padding:10px 12px !important;
+        border-radius:6px;
+        max-width:auto;
+        min-width:200px !important;
+        box-sizing:border-box;
+    }
+
+    .inputfield{
+       border:none;
+       outline:none;
+       padding:5px !important;
+       margin:10px !important;
+       width:320px !important;
+        font-size:1rem;
+       background-color:rgb(225, 219, 219);
+       color:grey;
+    }
+
 }
 
 @media screen and (max-width:399px) {
@@ -736,6 +877,118 @@
     .upperContent{
        margin-left:20px;
     }
+    .overlay{
+        position:absolute;
+        top:40% !important;
+        left:25% !important;
+        transform:translate(-23%,-70%) !important;
+        background:rgba(0, 0, 0, 0.3);
+        padding:10px 12px !important;
+        border-radius:6px;
+        max-width:auto;
+        min-width:200px !important;
+        box-sizing:border-box;
+    }
+
+
+}
+
+@media screen and (max-width:390px){
+    .overlay{
+        position:absolute;
+        top:40% !important;
+        left:25% !important;
+        transform:translate(-23%,-70%) !important;
+        background:rgba(0, 0, 0, 0.3);
+        padding:8px 10px !important;
+        border-radius:6px;
+        max-width:auto;
+        min-width:250px !important;
+        box-sizing:border-box;
+    }
+    .inputfield{
+        border:none;
+        outline:none;
+        padding:5px !important;
+        margin:10px !important;
+        width:300px !important;
+         font-size:0.8rem;
+        background-color:rgb(225, 219, 219);
+        color:grey;
+     }
+     .btnsdiv button{
+         width:200px !important;
+         padding:7px !important;
+         margin:7px !important;
+         font-size:0.8rem !important;
+     }
+}
+
+@media screen and (max-width:387px) {
+    .heading{
+        font-size:0.8rem !important;
+        font-weight:600;
+        letter-spacing:0px;
+    }
+    .timing{
+        font-size:0.6rem !important;
+    }
+    .containerupperlist{
+        width:275px !important;
+        margin-left:20px !important;
+    }
+    .days{
+        font-size:0.5rem;
+        padding-left:7px;
+      }
+      .months{
+          font-size:0.5rem;
+          padding:4px;
+      }
+      .icons{
+        font-size:10px;
+      }
+      .deletediv svg{
+         padding:2px !important;
+         margin:0px;
+         font-size:13px;
+      }
+    .containermonthly{
+        width:280px !important;
+        height:80px;
+        margin-left:20px !important;
+    }
+    .datemonthly{
+        margin-left:20px;
+        font-size:0.5rem !important;
+    }
+    .monthspan{
+     font-size:0.7rem;
+    }
+    .discrptionmonthly{
+      margin-top:17px;
+    }
+    .discrptionmonthly span{
+        font-size:0.7rem;
+    }
+    .iconedit svg{
+        font-size:2px !important;
+    }
+    .List_iconedit__vt3fi {
+        padding: 10px;
+        font-size: 14px !important;
+    }
+    .lowerbtns{
+        width:78%;
+    }
+    .lowerbtns2 button{
+        padding:7px;
+        margin:20px;
+        font-size:0.8rem;
+    }
+    .upperContent{
+       margin-left:20px;
+    }
 }
 
 @media screen and (max-width:378px) {
@@ -790,7 +1043,6 @@
     }
     .List_iconedit__vt3fi {
         padding: 10px;
-        /* font-size: 5px; */
         font-size: 14px !important;
     }
     .lowerbtns{
@@ -801,6 +1053,101 @@
         margin:20px;
         font-size:0.8rem;
     }
+    .upperContent{
+       margin-left:20px;
+    }
+}
+@media screen and (max-width:363px) {
+
+    .overlay{
+        position:absolute;
+        top:40% !important;
+        left:25% !important;
+        transform:translate(-23%,-70%) !important;
+        background:rgba(0, 0, 0, 0.3);
+        padding:5px 7px !important;
+        border-radius:6px;
+        max-width:auto;
+        min-width:240px !important;
+        box-sizing:border-box;
+    }
+    .inputfield{
+        border:none;
+        outline:none;
+        padding:3px !important;
+        margin:8px !important;
+        width:270px !important;
+         font-size:0.8rem;
+        background-color:rgb(225, 219, 219);
+        color:grey;
+     }
+     .btnsdiv button{
+         width:200px !important;
+         padding:7px !important;
+         margin:7px !important;
+         font-size:0.8rem !important;
+     }
+}
+@media screen and (max-width:354px) {
+    .heading{
+        font-size:0.8rem !important;
+        font-weight:600;
+        letter-spacing:0px;
+    }
+    .timing{
+        font-size:0.6rem !important;
+    }
+    .containerupperlist{
+        width:265px !important;
+        margin-left:15px !important;
+    }
+    .days{
+        font-size:0.5rem;
+        padding-left:3px;
+      }
+      .months{
+          font-size:0.4rem;
+          padding:3px;
+      }
+      .icons{
+        font-size:10px;
+      }
+      .deletediv svg{
+         padding:2px !important;
+         margin:0px;
+         font-size:13px;
+      }
+    .containermonthly{
+        width:270px !important;
+        height:70px;
+        margin-left:20px !important;
+    }
+    .datemonthly{
+        margin-left:20px;
+        font-size:0.5rem !important;
+    }
+    .monthspan{
+     font-size:0.7rem;
+    }
+    .discrptionmonthly{
+      margin-top:17px;
+      margin-left:16px;
+      font-size:0.7rem;
+    }
+    .discrptionmonthly span{
+        font-size:0.8rem;
+    }
+    .iconedit svg{
+        font-size:2px !important;
+    }
+    .List_iconedit__vt3fi {
+        padding: 10px;
+        font-size: 14px !important;
+    }
+    .lowerbtns{
+        width:95%;
+    }
+
     .upperContent{
        margin-left:20px;
     }

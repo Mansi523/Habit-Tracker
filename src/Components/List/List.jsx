@@ -104,7 +104,7 @@ const statusIsUpdate = (d,h,index)=>{
             <div className={style.icons} onClick={()=>statusIsUpdate(d,h,index)}>
               {
                d.status==="nutral"? <GiCircle fontSize={20} className={style.icons}/>:d.status === "done"? 
-               <PiCheckCircleLight fontSize={23}/>:<PiXCircleLight  fontSize={22}/>
+               <PiCheckCircleLight fontSize={23} className={style.icons} />:<PiXCircleLight  fontSize={22} className={style.icons} />
 
               }
            
