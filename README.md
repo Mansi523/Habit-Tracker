@@ -67,8 +67,8 @@ Welcome to the Habit Tracker app! This application empowers you to cultivate pos
 
 ## Author
 
-- **Your Name**
-  - GitHub: [Your GitHub Profile](https://github.com/your-username)
+- Mansi Kumari
+  - GitHub: [https://github.com/Mansi523]
 
 ## Images
 

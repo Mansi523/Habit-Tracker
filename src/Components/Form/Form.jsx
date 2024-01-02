@@ -42,7 +42,7 @@ const Form = ({ handleModal, setModal, Edit, setEdit }) => {
     handleModal();
   };
 
-  // handleSave for deting the the values date wise and monthwise in the habitlist
+  // handleSave for updating the the values date wise and monthwise in the habitlist
   const handleSave = () => {
     const habitData = [];
 
