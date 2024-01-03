@@ -76,7 +76,7 @@ Welcome to the Habit Tracker app! This application empowers you to cultivate pos
 
 <a href="https://github.com/Mansi523/Habit-Tracker"><img src="https://i.ibb.co/THtKQQD/Screenshot-60.png" alt="list page" /></a>
 
---Mobile View
+## Mobile View
 
 <a href="https://github.com/Mansi523/Habit-Tracker"><img src="https://i.ibb.co/Z8X1Yyb/mobile-3.png" alt="mobile-3" /></a>
 
