@@ -971,7 +971,7 @@
   }
 }
 
-@media screen and (max-width: 378px) {
+@media screen and (max-width: 379px) {
   .heading {
     font-size: 0.8rem !important;
     font-weight: 600;
@@ -985,7 +985,7 @@
     margin-left: 20px !important;
   }
   .days {
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     padding-left: 7px;
   }
   .months {
