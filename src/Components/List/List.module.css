@@ -714,6 +714,7 @@
     width: 310px !important;
     margin-left: 45px !important;
   }
+
   .containermonthly {
     width: 310px !important;
     height: 80px;
@@ -789,6 +790,29 @@
     font-size: 1rem;
     background-color: rgb(225, 219, 219);
     color: grey;
+  }
+}
+
+@media screen and (max-width: 413px) {
+  .containerupperlist {
+    width: 320px !important;
+    margin-left: 43px !important;
+  }
+  .days {
+    font-size: 0.3rem !important;
+    padding-left: 6px !important;
+  }
+  .months {
+    font-size: 0.4rem !important;
+    padding: 3px !important;
+  }
+  .icons {
+    font-size: 10px;
+  }
+  .deletediv svg {
+    padding: 2px;
+    margin: 0px;
+    font-size: 13px;
   }
 }
 
