@@ -37,7 +37,6 @@ const List = ({ handleModal, setModal, Modal }) => {
 
   //function for handling the selecting the status.
   const handleSelect = (d, h, index) => {
-    console.log("testtupd", d.status);
 
     const updateDay = h.day.map((x, i) => {
       if (i === index) {

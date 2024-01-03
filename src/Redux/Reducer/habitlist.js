@@ -27,7 +27,6 @@ export const handleAddHabit = createAsyncThunk(
         day: habit.day,
       };
       const docRef = await addDoc(collection(db, "habit"), data);
-      console.log("Document written with ID: ", docRef.id);
 
       return { ...data, id: docRef.id };
     } catch (error) {
@@ -48,7 +47,6 @@ export const fetchHabit = createAsyncThunk(
             ...doc.data(),
             id: doc.id,
           }));
-          console.log("fetchhabit", data);
           resolve(data);
         });
 
@@ -67,7 +65,6 @@ export const deleteHabit = createAsyncThunk(
   "habittracker/deleteHabit",
   async (id) => {
     try {
-      console.log("delete", id);
       await deleteDoc(doc(db, "habit", id));
       return id;
     } catch (error) {
@@ -80,7 +77,6 @@ export const deleteHabit = createAsyncThunk(
 export const showHabit = createAsyncThunk(
   "habittracker/showHabit",
   async (habit) => {
-    console.log("showhabit", habit);
     try {
       const washingtonRef = doc(db, "habit", habit.id);
 
@@ -120,7 +116,6 @@ export const selectHabit = createAsyncThunk(
   "habittracker/selectHabit",
   async (habit) => {
     try {
-      console.log("kuch ajib", habit);
       const washingtonRef = doc(db, "habit", habit.id);
 
       // Set the "capital" field of the city 'DC'
