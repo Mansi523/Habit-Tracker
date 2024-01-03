@@ -72,8 +72,9 @@ Welcome to the Habit Tracker app! This application empowers you to cultivate pos
 
 ## Images
 
-![Habit Tracker App Screenshot 1](url-to-screenshot-1)
-![Habit Tracker App Screenshot 2](url-to-screenshot-2)
+<a href="https://github.com/Mansi523/Habit-Tracker"><img src="https://i.ibb.co/0cgZMhd/Screenshot-58.png" alt="landing page" /></a>
+
+<a href="https://github.com/Mansi523/Habit-Tracker"><img src="https://i.ibb.co/THtKQQD/Screenshot-60.png" alt="list page" /></a>
 
 ## Contributions
 
