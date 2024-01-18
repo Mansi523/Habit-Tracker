@@ -8,7 +8,7 @@ export const Navbar = () => {
       {/* navbar of the app */}
       <div className={style.NavContent}>
         <div className={style.heading}>
-          <span>Habit Tracker</span>
+          <span>Habit Flow</span>
         </div>
       </div>
     </>

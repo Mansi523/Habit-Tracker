@@ -12,7 +12,7 @@ const Main = ({ Modal, setModal, handleModal }) => {
         <div className={style.content}>
           <p>
             Looks like you aren't tracking any habits yet, so...
-            <br />
+            <br/>
             what do you want to start doing every day? :)
           </p>
         </div>
